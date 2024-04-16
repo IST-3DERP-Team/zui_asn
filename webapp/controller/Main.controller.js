@@ -1063,8 +1063,8 @@ sap.ui.define([
                                         // me._oModel.update("/" + encodeURIComponent(entitySet), param, mParameters);
                                     })
 
-                                    // Common.closeProcessingDialog(me);
-                                    // return;
+                                    Common.closeProcessingDialog(me);
+                                    return;
 
                                     me._oModel.submitChanges({
                                         groupId: "update",

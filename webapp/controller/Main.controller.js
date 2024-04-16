@@ -4,7 +4,7 @@ sap.ui.define([
     "sap/m/MessageBox",
     "../js/Common",
     "sap/ui/model/Filter",
-	"sap/ui/model/FilterOperator",
+    "sap/ui/model/FilterOperator",
     "sap/ui/core/routing/HashChanger",
     'sap/m/Token',
     'sap/m/ColumnListItem',
@@ -17,7 +17,7 @@ sap.ui.define([
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller,JSONModel,MessageBox,Common,Filter,FilterOperator,HashChanger,Token,ColumnListItem,Label,TableValueHelp,TableFilter,jQuery,SmartFilterCustomControl) {
+    function (Controller, JSONModel, MessageBox, Common, Filter, FilterOperator, HashChanger, Token, ColumnListItem, Label, TableValueHelp, TableFilter, jQuery, SmartFilterCustomControl) {
         "use strict";
 
         var me;
@@ -27,7 +27,7 @@ sap.ui.define([
         var timeFormat = sap.ui.core.format.DateFormat.getTimeInstance({ pattern: "KK:mm:ss a" });
 
         return Controller.extend("zuiasn.zuiasn.controller.Main", {
-            onInit: function () {            
+            onInit: function () {
                 me = this;
                 this._aColumns = {};
                 this._aDataBeforeChange = [];
@@ -92,121 +92,121 @@ sap.ui.define([
                     .setModel(new JSONModel({
                         columns: [],
                         rows: []
-                }));
+                    }));
 
                 this.byId("detailTab")
                     .setModel(new JSONModel({
                         columns: [],
                         rows: []
-                }));
+                    }));
 
                 var oDDTextParam = [], oDDTextResult = {};
                 var oModel = this.getOwnerComponent().getModel("ZGW_3DERP_COMMON_SRV");
 
                 //TABLE COLUMNS
-                oDDTextParam.push({CODE: "SBU"});
-                oDDTextParam.push({CODE: "ASNNO"});
-                oDDTextParam.push({CODE: "ASNDT"});
-                oDDTextParam.push({CODE: "DLVNO"});
-                oDDTextParam.push({CODE: "STATUSCD"});
-                oDDTextParam.push({CODE: "EVERS"});
-                oDDTextParam.push({CODE: "REFID"});
-                oDDTextParam.push({CODE: "LIFNR"});
-                oDDTextParam.push({CODE: "VENDREFNO"});
-                oDDTextParam.push({CODE: "SHPTOPLNT"});
-                oDDTextParam.push({CODE: "CONSIGNEE"});
-                oDDTextParam.push({CODE: "ORIGIN"});
-                oDDTextParam.push({CODE: "DEST"});
-                oDDTextParam.push({CODE: "SHIPDT"});
-                oDDTextParam.push({CODE: "ETD"});
-                oDDTextParam.push({CODE: "ETA"});
-                oDDTextParam.push({CODE: "HBL"});
-                oDDTextParam.push({CODE: "MBL"});
-                oDDTextParam.push({CODE: "CARRIER"});
-                oDDTextParam.push({CODE: "FORWRDR"});
-                oDDTextParam.push({CODE: "FORREFNO"});
-                oDDTextParam.push({CODE: "VESSEL"});
-                oDDTextParam.push({CODE: "VOYAGE"});
-                oDDTextParam.push({CODE: "CONTNO"});
-                oDDTextParam.push({CODE: "SEALNO"});
-                oDDTextParam.push({CODE: "GRSWT"});
-                oDDTextParam.push({CODE: "TOTALPKG"});
-                oDDTextParam.push({CODE: "INVNO"});
-                oDDTextParam.push({CODE: "INVDT"});
-                oDDTextParam.push({CODE: "LCNO"});
-                oDDTextParam.push({CODE: "COO"});
-                oDDTextParam.push({CODE: "REMARKS"});
-                oDDTextParam.push({CODE: "DELETED"});
-                oDDTextParam.push({CODE: "CREATEDBY"});
-                oDDTextParam.push({CODE: "CREATEDDT"});
-                oDDTextParam.push({CODE: "UPDATEDBY"});
-                oDDTextParam.push({CODE: "UPDATEDDT"});
-                oDDTextParam.push({CODE: "SEQNO"});
-                oDDTextParam.push({CODE: "PLANTCD"});
-                oDDTextParam.push({CODE: "MATNO"});
-                oDDTextParam.push({CODE: "BATCH"});
-                oDDTextParam.push({CODE: "ITEMDESC"});
-                oDDTextParam.push({CODE: "VENDBATCH"});
-                oDDTextParam.push({CODE: "EBELN"});
-                oDDTextParam.push({CODE: "POVERNO"});
-                oDDTextParam.push({CODE: "EBELP"});
-                oDDTextParam.push({CODE: "HUID"});
-                oDDTextParam.push({CODE: "PKGNO"});
-                oDDTextParam.push({CODE: "SHIPQTY"});
-                oDDTextParam.push({CODE: "FOCQTY"});
-                oDDTextParam.push({CODE: "ORDUOM"});
-                oDDTextParam.push({CODE: "SHIPBSEQTY"});
-                oDDTextParam.push({CODE: "FOCBSEQTY"});
-                oDDTextParam.push({CODE: "BASEUOM"});
-                oDDTextParam.push({CODE: "NETWT"});
-                oDDTextParam.push({CODE: "WTUOM"});
-                oDDTextParam.push({CODE: "PKGDIM"});
-                oDDTextParam.push({CODE: "LNDIM"});
-                oDDTextParam.push({CODE: "WDDIM"});
-                oDDTextParam.push({CODE: "HTDIM"});
-                oDDTextParam.push({CODE: "DIMUOM"});
-                oDDTextParam.push({CODE: "COLOR"});
-                oDDTextParam.push({CODE: "PATTERN"});
-                oDDTextParam.push({CODE: "QRCODE"});
+                oDDTextParam.push({ CODE: "SBU" });
+                oDDTextParam.push({ CODE: "ASNNO" });
+                oDDTextParam.push({ CODE: "ASNDT" });
+                oDDTextParam.push({ CODE: "DLVNO" });
+                oDDTextParam.push({ CODE: "STATUSCD" });
+                oDDTextParam.push({ CODE: "EVERS" });
+                oDDTextParam.push({ CODE: "REFID" });
+                oDDTextParam.push({ CODE: "LIFNR" });
+                oDDTextParam.push({ CODE: "VENDREFNO" });
+                oDDTextParam.push({ CODE: "SHPTOPLNT" });
+                oDDTextParam.push({ CODE: "CONSIGNEE" });
+                oDDTextParam.push({ CODE: "ORIGIN" });
+                oDDTextParam.push({ CODE: "DEST" });
+                oDDTextParam.push({ CODE: "SHIPDT" });
+                oDDTextParam.push({ CODE: "ETD" });
+                oDDTextParam.push({ CODE: "ETA" });
+                oDDTextParam.push({ CODE: "HBL" });
+                oDDTextParam.push({ CODE: "MBL" });
+                oDDTextParam.push({ CODE: "CARRIER" });
+                oDDTextParam.push({ CODE: "FORWRDR" });
+                oDDTextParam.push({ CODE: "FORREFNO" });
+                oDDTextParam.push({ CODE: "VESSEL" });
+                oDDTextParam.push({ CODE: "VOYAGE" });
+                oDDTextParam.push({ CODE: "CONTNO" });
+                oDDTextParam.push({ CODE: "SEALNO" });
+                oDDTextParam.push({ CODE: "GRSWT" });
+                oDDTextParam.push({ CODE: "TOTALPKG" });
+                oDDTextParam.push({ CODE: "INVNO" });
+                oDDTextParam.push({ CODE: "INVDT" });
+                oDDTextParam.push({ CODE: "LCNO" });
+                oDDTextParam.push({ CODE: "COO" });
+                oDDTextParam.push({ CODE: "REMARKS" });
+                oDDTextParam.push({ CODE: "DELETED" });
+                oDDTextParam.push({ CODE: "CREATEDBY" });
+                oDDTextParam.push({ CODE: "CREATEDDT" });
+                oDDTextParam.push({ CODE: "UPDATEDBY" });
+                oDDTextParam.push({ CODE: "UPDATEDDT" });
+                oDDTextParam.push({ CODE: "SEQNO" });
+                oDDTextParam.push({ CODE: "PLANTCD" });
+                oDDTextParam.push({ CODE: "MATNO" });
+                oDDTextParam.push({ CODE: "BATCH" });
+                oDDTextParam.push({ CODE: "ITEMDESC" });
+                oDDTextParam.push({ CODE: "VENDBATCH" });
+                oDDTextParam.push({ CODE: "EBELN" });
+                oDDTextParam.push({ CODE: "POVERNO" });
+                oDDTextParam.push({ CODE: "EBELP" });
+                oDDTextParam.push({ CODE: "HUID" });
+                oDDTextParam.push({ CODE: "PKGNO" });
+                oDDTextParam.push({ CODE: "SHIPQTY" });
+                oDDTextParam.push({ CODE: "FOCQTY" });
+                oDDTextParam.push({ CODE: "ORDUOM" });
+                oDDTextParam.push({ CODE: "SHIPBSEQTY" });
+                oDDTextParam.push({ CODE: "FOCBSEQTY" });
+                oDDTextParam.push({ CODE: "BASEUOM" });
+                oDDTextParam.push({ CODE: "NETWT" });
+                oDDTextParam.push({ CODE: "WTUOM" });
+                oDDTextParam.push({ CODE: "PKGDIM" });
+                oDDTextParam.push({ CODE: "LNDIM" });
+                oDDTextParam.push({ CODE: "WDDIM" });
+                oDDTextParam.push({ CODE: "HTDIM" });
+                oDDTextParam.push({ CODE: "DIMUOM" });
+                oDDTextParam.push({ CODE: "COLOR" });
+                oDDTextParam.push({ CODE: "PATTERN" });
+                oDDTextParam.push({ CODE: "QRCODE" });
 
                 //LABELS
-                oDDTextParam.push({CODE: "REFRESH"});
-                oDDTextParam.push({CODE: "CREATEID"});
-                oDDTextParam.push({CODE: "FULLSCREEN"});
-                oDDTextParam.push({CODE: "EXITFULLSCREEN"});
-                oDDTextParam.push({CODE: "SAVELAYOUT"});
-                oDDTextParam.push({CODE: "DELETE"});
-                oDDTextParam.push({CODE: "WRAP"});
-                oDDTextParam.push({CODE: "UNWRAP"});
-                
-                //INFO
-                oDDTextParam.push({CODE: "INFO_NO_RECORD_TO_PROC"});
-                oDDTextParam.push({CODE: "INFO_NO_SEL_RECORD_TO_PROC"});
-                oDDTextParam.push({CODE: "INFO_NO_LAYOUT"});
-                oDDTextParam.push({CODE: "INFO_LAYOUT_SAVE"});
-                oDDTextParam.push({CODE: "INFO_SEL_RECORD_TO_DELETE"});  
-                oDDTextParam.push({CODE: "INFO_NO_RECORD_TO_DELETE"});  
-                oDDTextParam.push({CODE: "INFO_ASN_DELETE_NOT_ALLOW"});
-                oDDTextParam.push({CODE: "INFO_DATA_DELETED"});  
-                oDDTextParam.push({CODE: "CONF_DELETE_RECORDS"});
-                oDDTextParam.push({CODE: "INFO_ERROR"});
-                oDDTextParam.push({CODE: "CANCEL"});
-                oDDTextParam.push({CODE: "CLOSE"});
-                oDDTextParam.push({CODE: "DELETE"});
-                oDDTextParam.push({CODE: "REFRESH"});
-                oDDTextParam.push({CODE: "FULLSCREEN"});
-                oDDTextParam.push({CODE: "EXITFULLSCREEN"});
+                oDDTextParam.push({ CODE: "REFRESH" });
+                oDDTextParam.push({ CODE: "CREATEID" });
+                oDDTextParam.push({ CODE: "FULLSCREEN" });
+                oDDTextParam.push({ CODE: "EXITFULLSCREEN" });
+                oDDTextParam.push({ CODE: "SAVELAYOUT" });
+                oDDTextParam.push({ CODE: "DELETE" });
+                oDDTextParam.push({ CODE: "WRAP" });
+                oDDTextParam.push({ CODE: "UNWRAP" });
 
-                oModel.create("/CaptionMsgSet", { CaptionMsgItems: oDDTextParam  }, {
+                //INFO
+                oDDTextParam.push({ CODE: "INFO_NO_RECORD_TO_PROC" });
+                oDDTextParam.push({ CODE: "INFO_NO_SEL_RECORD_TO_PROC" });
+                oDDTextParam.push({ CODE: "INFO_NO_LAYOUT" });
+                oDDTextParam.push({ CODE: "INFO_LAYOUT_SAVE" });
+                oDDTextParam.push({ CODE: "INFO_SEL_RECORD_TO_DELETE" });
+                oDDTextParam.push({ CODE: "INFO_NO_RECORD_TO_DELETE" });
+                oDDTextParam.push({ CODE: "INFO_ASN_DELETE_NOT_ALLOW" });
+                oDDTextParam.push({ CODE: "INFO_DATA_DELETED" });
+                oDDTextParam.push({ CODE: "CONF_DELETE_RECORDS" });
+                oDDTextParam.push({ CODE: "INFO_ERROR" });
+                oDDTextParam.push({ CODE: "CANCEL" });
+                oDDTextParam.push({ CODE: "CLOSE" });
+                oDDTextParam.push({ CODE: "DELETE" });
+                oDDTextParam.push({ CODE: "REFRESH" });
+                oDDTextParam.push({ CODE: "FULLSCREEN" });
+                oDDTextParam.push({ CODE: "EXITFULLSCREEN" });
+
+                oModel.create("/CaptionMsgSet", { CaptionMsgItems: oDDTextParam }, {
                     method: "POST",
-                    success: function(oData, oResponse) {        
+                    success: function (oData, oResponse) {
                         oData.CaptionMsgItems.results.forEach(item => {
                             oDDTextResult[item.CODE] = item.TEXT;
                         })
 
                         me.getView().setModel(new JSONModel(oDDTextResult), "ddtext");
                     },
-                    error: function(err) { }
+                    error: function (err) { }
                 });
 
                 var oTableEventDelegate = {
@@ -224,7 +224,7 @@ sap.ui.define([
                         me.onAfterTableRendering();
                     },
 
-                    onclick: function(oEvent) {
+                    onclick: function (oEvent) {
                         me.onTableClick(oEvent);
                     }
                 };
@@ -236,14 +236,14 @@ sap.ui.define([
                 // this.getHeaderData();
 
                 this.getAppAction();
-            }, 
+            },
 
-            getAppAction: async function() {
+            getAppAction: async function () {
                 var csAction = "change";
                 if (sap.ushell.Container !== undefined) {
-                    const fullHash = new HashChanger().getHash(); 
+                    const fullHash = new HashChanger().getHash();
                     const urlParsing = await sap.ushell.Container.getServiceAsync("URLParsing");
-                    const shellHash = urlParsing.parseShellHash(fullHash); 
+                    const shellHash = urlParsing.parseShellHash(fullHash);
                     const sAction = shellHash.action;
                     csAction = shellHash.action;
                 }
@@ -268,7 +268,7 @@ sap.ui.define([
                 //get the date filter of effect date
                 var vEffectDate = this.getView().byId("EFFECTDTDatePicker").getValue();
                 var aFilter = [];
-                
+
                 if (vEffectDate !== undefined && vEffectDate !== '') {
                     vEffectDate = vEffectDate.replace(/\s/g, '').toString(); //properly format the date for ABAP
                     var vEffectDateStr = vEffectDate.split('-');
@@ -294,10 +294,10 @@ sap.ui.define([
             onSBUChange: async function (oEvent) {
                 // alert("onSBUChange");
                 this._sbuChange = true;
-                
-                var me = this;                
+
+                var me = this;
                 var vSBU = this.getView().byId("cboxSBU").getSelectedKey();
-                
+
                 // _promiseResult = new Promise((resolve, reject) => {
                 //     oModel.read("/ZVB_3DERP_SHIPMODE_SH", {
                 //         success: function (oData, oResponse) {
@@ -346,15 +346,15 @@ sap.ui.define([
                 var aFilters = [], aFilter = [], aSmartFilter = [];
 
                 // var vSBU = this.getView().getModel("ui").getProperty("/sbu");
-                
-                if (oSmartFilter.length > 0)  {
+
+                if (oSmartFilter.length > 0) {
                     oSmartFilter[0].aFilters.forEach(item => {
                         if (item.aFilters === undefined) {
                             console.log("aFilter", item);
-                            if(item.sPath === "LIFNR" && item.oValue1.length === 7) {
+                            if (item.sPath === "LIFNR" && item.oValue1.length === 7) {
                                 aFilter.push(new Filter(item.sPath, item.sOperator, "000" + item.oValue1));
                             } else {
-                            aFilter.push(new Filter(item.sPath, item.sOperator, item.oValue1));
+                                aFilter.push(new Filter(item.sPath, item.sOperator, item.oValue1));
                             }
                         }
                         else {
@@ -371,11 +371,11 @@ sap.ui.define([
 
                         if (oCtrl) {
                             var aCustomFilter = [];
-    
+
                             if (oCtrl.getTokens().length === 1) {
-                                oCtrl.getTokens().map(function(oToken) {
+                                oCtrl.getTokens().map(function (oToken) {
                                     console.log("aFilters", item);
-                                    if(item === "LIFNR" && oToken.getKey().length === 7) {
+                                    if (item === "LIFNR" && oToken.getKey().length === 7) {
                                         aFilters.push(new Filter(item, FilterOperator.EQ, "000" + oToken.getKey()))
                                     } else {
                                         aFilters.push(new Filter(item, FilterOperator.EQ, oToken.getKey()))
@@ -383,15 +383,15 @@ sap.ui.define([
                                 })
                             }
                             else if (oCtrl.getTokens().length > 1) {
-                                oCtrl.getTokens().map(function(oToken) {
+                                oCtrl.getTokens().map(function (oToken) {
                                     console.log("aCustomFilter", item);
-                                    if(item === "LIFNR" && oToken.getKey().length === 7) {
+                                    if (item === "LIFNR" && oToken.getKey().length === 7) {
                                         aCustomFilter.push(new Filter(item, FilterOperator.EQ, "000" + oToken.getKey()))
                                     } else {
                                         aCustomFilter.push(new Filter(item, FilterOperator.EQ, oToken.getKey()))
                                     }
                                 })
-    
+
                                 aFilters.push(new Filter(aCustomFilter));
                             }
                         }
@@ -413,11 +413,11 @@ sap.ui.define([
                             console.log("ASNHDRSet", oData);
                             // oData.results.sort((a,b) => (a.SEQ > b.SEQ ? 1 : -1));
 
-                            oData.results.sort(function(a,b) {
+                            oData.results.sort(function (a, b) {
                                 return new Date(b.CREATEDDT) - new Date(a.CREATEDDT);
                             });
 
-                            oData.results.forEach((item, index) => {  
+                            oData.results.forEach((item, index) => {
                                 if (item.ASNDT !== null && item.ASNDT !== "  /  /" && item.ASNDT !== "") {
                                     item.ASNDT = dateFormat.format(new Date(item.ASNDT));
                                 }
@@ -439,7 +439,7 @@ sap.ui.define([
                                 if (item.UPDATEDDT !== null && item.UPDATEDDT !== "  /  /" && item.UPDATEDDT !== "" && item.UPDATEDDT !== " //  /  /" && item.UPDATEDDT != "  /  /") {
                                     item.UPDATEDDT = dateFormat.format(new Date(item.UPDATEDDT)) + " " + me.formatTimeOffSet(item.UPDATEDTM.ms);// + " " + timeFormat.format(new Date(item.UPDATEDTM));
                                 }
-    
+
                                 if (index === 0) {
                                     item.ACTIVE = "X";
                                     me.getView().getModel("ui").setProperty("/activeASN", item.ASNNO);
@@ -454,7 +454,7 @@ sap.ui.define([
                             });
 
                             me.getView().setModel(new JSONModel(oData.results), "HEADER_MODEL");
-                            
+
                             me.getDetailData(true);
                         }
                         else {
@@ -475,7 +475,7 @@ sap.ui.define([
 
                         Common.closeProcessingDialog(me);
                     },
-                    error: function (err) { 
+                    error: function (err) {
                         Common.closeProcessingDialog(me);
                     }
                 })
@@ -505,13 +505,13 @@ sap.ui.define([
                     },
                     success: function (oData) {
                         if (oData.results.length > 0) {
-                            oData.results.forEach((item, index) => {  
+                            oData.results.forEach((item, index) => {
                                 if (item.CREATEDDT !== null)
                                     item.CREATEDDT = dateFormat.format(new Date(item.CREATEDDT));
-    
+
                                 if (item.UPDATEDDT !== null)
                                     item.UPDATEDDT = dateFormat.format(new Date(item.UPDATEDDT));
-    
+
                                 if (index === 0) item.ACTIVE = "X";
                                 else item.ACTIVE = "";
                             });
@@ -553,7 +553,7 @@ sap.ui.define([
                     this.getDynamicColumns("ASNDET", "ZERP_SCIASNDET", "detailTab", oColumns);
                 }, 100);
             },
-            
+
             getDynamicColumns(arg1, arg2, arg3, arg4) {
                 var me = this;
                 var sType = arg1;
@@ -562,7 +562,7 @@ sap.ui.define([
                 var oLocColProp = arg4;
                 var oModel = this.getOwnerComponent().getModel("ZGW_3DERP_COMMON_SRV");
                 // var oModel = new sap.ui.model.odata.ODataModel("/sap/opu/odata/sap/ZGW_3DERP_COMMON_SRV/");
-                var vSBU = "VER"; 
+                var vSBU = "VER";
 
                 // console.log("getDynamicColumns", oModel);
 
@@ -574,10 +574,10 @@ sap.ui.define([
 
                 // console.log("1", oModel.getHeaders());
                 oModel.read("/ColumnsSet", {
-                    
+
                     success: function (oData, oResponse) {
                         // console.log("2");
-                        console.log(arg1, oData);  
+                        console.log(arg1, oData);
                         if (oData.results.length > 0) {
                             if (oLocColProp[sTabId.replace("Tab", "")] !== undefined) {
                                 oData.results.forEach(item => {
@@ -588,7 +588,7 @@ sap.ui.define([
                                         })
                                 })
                             }
-                            
+
                             me._aColumns[sTabId.replace("Tab", "")] = oData.results;
                             me.setTableColumns(sTabId, oData.results);
 
@@ -624,7 +624,7 @@ sap.ui.define([
                 //bind the dynamic column to the table
                 oTable.bindColumns("/columns", function (index, context) {
                     var sColumnId = context.getObject().ColumnName;
-                    var sColumnLabel =  context.getObject().ColumnLabel;
+                    var sColumnLabel = context.getObject().ColumnLabel;
                     var sColumnWidth = context.getObject().ColumnWidth;
                     var sColumnVisible = context.getObject().Visible;
                     var sColumnSorted = context.getObject().Sorted;
@@ -632,7 +632,7 @@ sap.ui.define([
                     var sColumnDataType = context.getObject().DataType;
                     var sTextWrapping = context.getObject().WrapText;
 
-                    if (sColumnWidth === 0) sColumnWidth = 100; 
+                    if (sColumnWidth === 0) sColumnWidth = 100;
 
                     var oText = new sap.m.Text({
                         wrapping: sTextWrapping === "X" ? true : false
@@ -641,23 +641,23 @@ sap.ui.define([
                     })
 
                     var oColProp = me._aColumns[sTabId.replace("Tab", "")].filter(fItem => fItem.ColumnName === sColumnId);
-                    
+
                     if (oColProp && oColProp.length > 0 && oColProp[0].ValueHelp && oColProp[0].ValueHelp["items"].text && oColProp[0].ValueHelp["items"].value !== oColProp[0].ValueHelp["items"].text &&
                         oColProp[0].TextFormatMode && oColProp[0].TextFormatMode !== "Key") {
-                        oText.bindText({  
-                            parts: [  
+                        oText.bindText({
+                            parts: [
                                 { path: sColumnId }
-                            ],  
-                            formatter: function(sKey) {
+                            ],
+                            formatter: function (sKey) {
                                 // console.log(oColProp[0].ValueHelp["items"].path, me.getView().getModel(oColProp[0].ValueHelp["items"].path).getData());
                                 var oValue = me.getView().getModel(oColProp[0].ValueHelp["items"].path).getData().filter(v => v[oColProp[0].ValueHelp["items"].value] === sKey);
-                                                      
+
                                 // this.removeStyleClass("green");
 
                                 // if (sKey === "COMM") {
                                 //     this.addStyleClass("green");
                                 // }
-                                
+
                                 if (oValue && oValue.length > 0) {
                                     if (oColProp[0].TextFormatMode === "Value") {
                                         return oValue[0][oColProp[0].ValueHelp["items"].text];
@@ -671,15 +671,15 @@ sap.ui.define([
                                 }
                                 else return sKey;
                             }
-                        });                        
+                        });
                     }
                     else {
-                        oText.bindText({  
-                            parts: [  
+                        oText.bindText({
+                            parts: [
                                 { path: sColumnId }
                             ]
-                        }); 
-                    } 
+                        });
+                    }
 
                     if (sColumnDataType === "STRING") {
                         return new sap.ui.table.Column({
@@ -751,7 +751,7 @@ sap.ui.define([
                 });
 
                 //date/number sorting
-                oTable.attachSort(function(oEvent) {
+                oTable.attachSort(function (oEvent) {
                     var sPath = oEvent.getParameter("column").getSortProperty();
                     var bMultiSort = oEvent.getParameter("columnAdded");
                     var bDescending, sSortOrder, oSorter, oColumn, columnType;
@@ -781,30 +781,30 @@ sap.ui.define([
                         columnType = oColumn[0].DataType;
 
                         if (columnType === "DATETIME") {
-                            oSorter.fnCompare = function(a, b) {
+                            oSorter.fnCompare = function (a, b) {
                                 // parse to Date object
                                 var aDate = new Date(a);
                                 var bDate = new Date(b);
-    
+
                                 if (bDate === null) { return -1; }
                                 if (aDate === null) { return 1; }
                                 if (aDate < bDate) { return -1; }
                                 if (aDate > bDate) { return 1; }
-    
+
                                 return 0;
                             };
                         }
                         else if (columnType === "NUMBER") {
-                            oSorter.fnCompare = function(a, b) {
+                            oSorter.fnCompare = function (a, b) {
                                 // parse to Date object
                                 var aNumber = +a;
                                 var bNumber = +b;
-    
+
                                 if (bNumber === null) { return -1; }
                                 if (aNumber === null) { return 1; }
                                 if (aNumber < bNumber) { return -1; }
                                 if (aNumber > bNumber) { return 1; }
-    
+
                                 return 0;
                             };
                         }
@@ -821,7 +821,7 @@ sap.ui.define([
                 // oTable.attachSort(function(oEvent) {
                 //     var sPath = oEvent.getParameter("column").getSortProperty();
                 //     var bDescending = false;
-                    
+
                 //     oTable.getColumns().forEach(col => {
                 //         if (col.getSorted()) {
                 //             col.setSorted(false);
@@ -870,17 +870,17 @@ sap.ui.define([
                 //             return 0;
                 //         };
                 //     }
-                    
+
                 //     oTable.getBinding('rows').sort(oSorter);
                 //     // prevent internal sorting by table
                 //     oEvent.preventDefault();
                 // });
-                
+
                 TableFilter.updateColumnMenu(sTabId, this);
 
                 var vWrap = oColumns[0].WrapText === "X" ? true : false;
                 this.getView().getModel("ui").setProperty("/dataWrap/" + sTabId, vWrap);
-                
+
                 // oColumns.forEach(item => {
                 //     var aFilterableColumns = [];
                 //     aFilterableColumns.push({
@@ -897,7 +897,7 @@ sap.ui.define([
                 //     icon: "sap-icon://filter"
                 // });
                 // oSubMenu.addItem(oSubMenuItem)
-                
+
                 // var oMenuItem = new sap.ui.unified.MenuItem({
                 //     icon: "sap-icon://filter",
                 //     text: "Filter",
@@ -925,11 +925,11 @@ sap.ui.define([
                 //                     wCustomFilter = true;
                 //                 }
                 //             })
-                            
+
                 //             if (!wCustomFilter) {
                 //                 oMenu.insertItem(oMenuItem, 2);                               
                 //             }
-                            
+
                 //             oMenu.setPageSize(oMenu.getItems().length); 
                 //         }, 10);
                 //     });
@@ -953,6 +953,153 @@ sap.ui.define([
                     }
                     else if (this._sActiveTable === "detailTab") {
                         this.getDetailData(true);
+                    }
+                }
+            },
+
+            onDelete: function (oEvent) {
+                var oTable = oEvent.getSource().oParent.oParent;
+                var sTabId = oTable.sId.split("--")[oTable.sId.split("--").length - 1];
+                this._sActiveTable = sTabId;
+                this.deleteData();
+            },
+
+            deleteData() {
+                if (this._dataMode === "READ") {
+                    var oTable = this.byId(this._sActiveTable);
+                    var aSelIndices = oTable.getSelectedIndices();
+                    var oTmpSelectedIndices = [];
+                    var aData = oTable.getModel().getData().rows;
+                    var vEntitySet = "";
+
+                    if (this._sActiveTable === "headerTab") vEntitySet = "/ASNHDRSet(";
+                    else vEntitySet = "/ASNDETSet(";
+
+                    this._oModel.setUseBatch(true);
+                    this._oModel.setDeferredGroups(["update"]);
+
+                    var mParameters = {
+                        "groupId": "update"
+                    }
+
+                    if (aSelIndices.length > 0) {
+                        aSelIndices.forEach(item => {
+                            // oTmpSelectedIndices.push(oTable.getBinding("rows").aIndices[item])
+                            if (aData.at(item).DLVNO === "" && aData.at(item).DELETED === false) {
+                                oTmpSelectedIndices.push(oTable.getBinding("rows").aIndices[item]);
+                            }
+                        })
+
+                        if (oTmpSelectedIndices.length <= 0) {
+                            MessageBox.information(me.getView().getModel("ddtext").getData()["INFO_NO_RECORD_TO_DELETE"]);
+                            return;
+                        }
+
+                        aSelIndices = oTmpSelectedIndices;
+
+                        MessageBox.confirm("Proceed to delete " + aSelIndices.length + " record(s)?", {
+                            actions: ["Yes", "No"],
+                            onClose: function (sAction) {
+                                if (sAction === "Yes") {
+                                    Common.openProcessingDialog(me, "Processing...");
+
+                                    if (me.byId(me._sActiveTable).getBinding("rows").aFilters.length > 0) {
+                                        me._aColFilters = me.byId(me._sActiveTable).getBinding("rows").aFilters;
+                                    }
+
+                                    if (me.byId(me._sActiveTable).getBinding("rows").aSorters.length > 0) {
+                                        me._aColSorters = me.byId(me._sActiveTable).getBinding("rows").aSorters;
+                                    }
+
+                                    aSelIndices.forEach(item => {
+                                        var entitySet = vEntitySet;
+                                        var iKeyCount = me._aColumns[me._sActiveTable.replace("Tab", "")].filter(col => col.Key === "X").length;
+                                        var itemValue;
+
+                                        me._aColumns[me._sActiveTable.replace("Tab", "")].forEach(col => {
+                                            if (col.DataType === "DATETIME") {
+                                                if (col.ColumnName === "ASNNDT")
+                                                    itemValue = sapDateFormat2.format(new Date(aData.at(item)[col.ColumnName]));
+                                                else
+                                                    itemValue = sapDateFormat.format(new Date(aData.at(item)[col.ColumnName])) + "T00:00:00";
+                                            }
+                                            else if (col.DataType === "BOOLEAN") {
+                                                oTmpSelectedIndices[col.ColumnName] = aData.at(item)[col.ColumnName] === true ? "X" : "";
+                                            }
+                                            else {
+                                                itemValue = aData.at(item)[col.ColumnName];
+                                            }
+
+                                            if (iKeyCount === 1) {
+                                                if (col.Key === "X") {
+                                                    if (col.DataType === "DATETIME") {
+                                                        entitySet += "datetime'" + itemValue + "'"
+                                                    } else {
+                                                        entitySet += "'" + itemValue + "'"
+                                                    }
+                                                }
+                                            }
+                                            else if (iKeyCount > 1) {
+                                                if (col.Key === "X") {
+                                                    if (col.DataType === "DATETIME") {
+                                                        entitySet += col.ColumnName + "=datetime'" + itemValue + "',"
+                                                    } else {
+                                                        entitySet += col.ColumnName + "='" + itemValue + "',"
+                                                    }
+                                                }
+                                            }
+                                        })
+
+                                        if (iKeyCount > 1) entitySet = entitySet.substring(0, entitySet.length - 1);
+                                        entitySet += ")";
+
+                                        var param = {};
+
+                                        param["DELETED"] = "X";
+
+                                        console.log(entitySet);
+                                        console.log(param);
+                                        me._oModel.update(entitySet, param, mParameters);
+                                        // me._oModel.update("/" + encodeURIComponent(entitySet), param, mParameters);
+                                    })
+
+                                    // Common.closeProcessingDialog(me);
+                                    // return;
+
+                                    me._oModel.submitChanges({
+                                        groupId: "update",
+                                        success: function (oData, oResponse) {
+                                            Common.closeProcessingDialog(me);
+                                            // me.refreshData();
+                                            aSelIndices.sort((a, b) => -1);
+                                            // console.log(aSelIndices)
+
+                                            aSelIndices.forEach(item => {
+                                                aData.splice(item, 1);
+                                            })
+
+                                            // console.log(aData);
+
+                                            me.byId(me._sActiveTable).getModel().setProperty("/rows", aData);
+                                            me.byId(me._sActiveTable).bindRows("/rows");
+
+                                            if (me._aColFilters.length > 0) { me.setColumnFilters(me._sActiveTable); }
+                                            if (me._aColSorters.length > 0) { me.setColumnSorters(me._sActiveTable); }
+
+                                            me.getView().getModel("counts").setProperty("/header", aData.length);
+
+                                            MessageBox.information(me.getView().getModel("ddtext").getData()["INFO_DATA_DELETED"]);
+                                        },
+                                        error: function () {
+                                            Common.closeProcessingDialog(me);
+                                        }
+                                    })
+                                }
+                            }
+                        })
+                    }
+                    else {
+                        MessageBox.information(this.getView().getModel("ddtext").getData()["INFO_NO_SEL_RECORD_TO_PROC"]);
                     }
                 }
             },
@@ -1086,16 +1233,16 @@ sap.ui.define([
                 var oControl = oEvent.srcControl;
                 var sTabId = oControl.sId.split("--")[oControl.sId.split("--").length - 1];
 
-                while (sTabId.substr(sTabId.length - 3) !== "Tab") {                    
+                while (sTabId.substr(sTabId.length - 3) !== "Tab") {
                     oControl = oControl.oParent;
                     sTabId = oControl.sId.split("--")[oControl.sId.split("--").length - 1];
                 }
-                
+
                 if (this._dataMode === "READ") this._sActiveTable = sTabId;
                 // console.log(this._sActiveTable);
             },
 
-            filterGlobally: function(oEvent) {
+            filterGlobally: function (oEvent) {
                 var oTable = oEvent.getSource().oParent.oParent;
                 var sTabId = oTable.sId.split("--")[oTable.sId.split("--").length - 1];
                 var sQuery = oEvent.getParameter("query");
@@ -1111,21 +1258,21 @@ sap.ui.define([
             exeGlobalSearch(arg1, arg2) {
                 var oFilter = null;
                 var aFilter = [];
-                
+
                 if (arg1) {
-                    this._aColumns[arg2.replace("Tab","")].forEach(item => {
-                         if (item.DataType === "BOOLEAN") aFilter.push(new Filter(item.ColumnName, FilterOperator.EQ, arg1));
+                    this._aColumns[arg2.replace("Tab", "")].forEach(item => {
+                        if (item.DataType === "BOOLEAN") aFilter.push(new Filter(item.ColumnName, FilterOperator.EQ, arg1));
                         else aFilter.push(new Filter(item.ColumnName, FilterOperator.Contains, arg1));
                     })
 
                     oFilter = new Filter(aFilter, false);
                 }
-    
+
                 this.byId(arg2).getBinding("rows").filter(oFilter, "Application");
 
                 if (arg1 && arg2 === "headerTab") {
-                    var vASN = this.byId(arg2).getModel().getData().rows.filter((item,index) => index === this.byId(arg2).getBinding("rows").aIndices[0])[0].ASNNO;
-                    var vASNDT = this.byId(arg2).getModel().getData().rows.filter((item,index) => index === this.byId(arg2).getBinding("rows").aIndices[0])[0].ASNDT;
+                    var vASN = this.byId(arg2).getModel().getData().rows.filter((item, index) => index === this.byId(arg2).getBinding("rows").aIndices[0])[0].ASNNO;
+                    var vASNDT = this.byId(arg2).getModel().getData().rows.filter((item, index) => index === this.byId(arg2).getBinding("rows").aIndices[0])[0].ASNDT;
                     this.getView().getModel("ui").setProperty("/activeASN", vASN);
                     this.getView().getModel("ui").setProperty("/activeASNDisplay", vASN);
 
@@ -1136,7 +1283,7 @@ sap.ui.define([
                 }
             },
 
-            formatValueHelp: function(sValue, sPath, sKey, sText, sFormat) {
+            formatValueHelp: function (sValue, sPath, sKey, sText, sFormat) {
                 // console.log(sValue, sPath, sKey, sText, sFormat);
                 var oValue = this.getView().getModel(sPath).getData().filter(v => v[sKey] === sValue);
 
@@ -1165,7 +1312,7 @@ sap.ui.define([
                                 col.filter(item.oValue1);
                             })
                     })
-                } 
+                }
             },
 
             setColumnSorters(sTable) {
@@ -1179,10 +1326,10 @@ sap.ui.define([
                                 col.sort(item.bDescending);
                             })
                     })
-                } 
+                }
             },
 
-            onValueHelpRequested: function(oEvent) {
+            onValueHelpRequested: function (oEvent) {
                 var aCols = {
                     "cols": [
                         {
@@ -1198,14 +1345,14 @@ sap.ui.define([
                 }
 
                 var oSource = oEvent.getSource();
-                var sModel = this._sActiveTable.replace("Tab","");
+                var sModel = this._sActiveTable.replace("Tab", "");
 
                 this._inputSource = oSource;
                 this._inputId = oSource.getId();
                 this._inputValue = oSource.getValue();
                 this._inputKey = oSource.getValue();
                 this._inputField = oSource.getBindingInfo("value").parts[0].path;
-                
+
                 var vColProp = this._aColumns[sModel].filter(item => item.ColumnName === this._inputField);
                 var vItemValue = vColProp[0].ValueHelp.items.value;
                 var vItemDesc = vColProp[0].ValueHelp.items.text;
@@ -1237,7 +1384,7 @@ sap.ui.define([
 
                 var oVHModel = new JSONModel({
                     items: vh
-                });                
+                });
 
                 this._oTableValueHelpDialog = sap.ui.xmlfragment("zuiasn.zuiasn.view.fragments.valuehelp.TableValueHelpDialog", this);
                 this.getView().addDependent(this._oTableValueHelpDialog);
@@ -1256,55 +1403,55 @@ sap.ui.define([
                         //bind the dynamic column to the table
                         oTable.bindColumns("/columns", function (index, context) {
                             // var sColumnId = context.getObject().ColumnName;
-                            var sColumnLabel =  context.getObject().label;
+                            var sColumnLabel = context.getObject().label;
                             var sColumnWidth = context.getObject().ColumnWidth;
                             // var sColumnVisible = context.getObject().Visible;
                             // var sColumnSorted = context.getObject().Sorted;
                             // var sColumnSortOrder = context.getObject().SortOrder;
                             // var sColumnDataType = context.getObject().DataType;
-        
+
                             if (sColumnWidth === 0) sColumnWidth = 100;
-        
+
                             var oCtrl = new sap.m.Text({
                                 text: "{" + context.getObject().template + "}",
                                 wrapping: false
                             })
-        
+
                             return new sap.ui.table.Column({
                                 // id: sTabId.replace("Tab", "") + "Col" + sColumnId,
                                 label: new sap.m.Text({ text: sColumnLabel }),
                                 template: oCtrl,
                                 autoResizable: true,
                                 width: sColumnWidth
-                            });                    
+                            });
                         });
 
                         oTable.bindAggregation("rows", "/items");
                     }
-    
+
                     this._oTableValueHelpDialog.update();
                 }.bind(this));
-    
+
                 var oToken = new Token();
                 oToken.setKey(this._inputSource.getSelectedKey());
                 oToken.setText(this._inputSource.getValue());
                 this._oTableValueHelpDialog.setTokens([oToken]);
                 this._oTableValueHelpDialog.open();
             },
-            
+
             onValueHelpOkPress: function (oEvent) {
                 var aTokens = oEvent.getParameter("tokens");
-    
+
                 if (aTokens.length > 0) {
                     this._inputSource.setSelectedKey(aTokens[0].getKey());
                 }
                 this._oTableValueHelpDialog.close();
             },
-    
+
             onValueHelpCancelPress: function () {
                 this._oTableValueHelpDialog.close();
             },
-    
+
             onValueHelpAfterClose: function () {
                 this._oTableValueHelpDialog.destroy();
             },
@@ -1322,7 +1469,7 @@ sap.ui.define([
                     if (oTable.getBinding("rows").aIndices.length > 0) {
                         for (var i = iStartIndex; i < iLength; i++) {
                             var iDataIndex = oTable.getBinding("rows").aIndices.filter((fItem, fIndex) => fIndex === i);
-    
+
                             if (oData[iDataIndex].ACTIVE === "X") oTable.getRows()[iStartIndex === 0 ? i : i - iStartIndex].addStyleClass("activeRow");
                             else oTable.getRows()[iStartIndex === 0 ? i : i - iStartIndex].removeStyleClass("activeRow");
                         }
@@ -1344,19 +1491,19 @@ sap.ui.define([
                 this.setActiveRowHighlight();
             },
 
-            onSort: function(oEvent) {
+            onSort: function (oEvent) {
                 var oTable = oEvent.getSource();
                 var sTabId = oTable.sId.split("--")[oTable.sId.split("--").length - 1];
                 this._sActiveTable = sTabId;
 
                 this.setActiveRowHighlight();
             },
-            
-            onFilter: function(oEvent) {
+
+            onFilter: function (oEvent) {
                 var oTable = oEvent.getSource();
                 var sTabId = oTable.sId.split("--")[oTable.sId.split("--").length - 1];
                 this._sActiveTable = sTabId;
-                
+
                 this.setActiveRowHighlight();
 
                 setTimeout(() => {
@@ -1365,7 +1512,7 @@ sap.ui.define([
                     }
                     else if (this._sActiveTable === "detailTab") {
                         this.getView().getModel("counts").setProperty("/detail", this.byId(this._sActiveTable).getBinding("rows").aIndices.length);
-                    } 
+                    }
                 }, 100);
             },
 
@@ -1380,7 +1527,7 @@ sap.ui.define([
                             row.addStyleClass("activeRow");
                         }
                         else row.removeStyleClass("activeRow");
-                    })                    
+                    })
                 }, 100);
             },
 
@@ -1388,7 +1535,7 @@ sap.ui.define([
                 if (oEvent.key === "ArrowUp" || oEvent.key === "ArrowDown") {
                     //prevent increase/decrease of number value
                     oEvent.preventDefault();
-                    
+
                     var sTableId = oEvent.srcControl.oParent.oParent.sId;
                     var oTable = this.byId(sTableId);
                     var sColumnName = oEvent.srcControl.getBindingInfo("value").parts[0].path;
@@ -1405,17 +1552,17 @@ sap.ui.define([
                     //get active row (arrow down)
                     oTable.getBinding("rows").aIndices.forEach((item, index) => {
                         if (item === sCurrentRowIndex) { sCurrentRow = index; }
-                        if (sCurrentRow !== -1 && sActiveRow === -1) { 
+                        if (sCurrentRow !== -1 && sActiveRow === -1) {
                             if ((sCurrentRow + 1) === index) { sActiveRow = item }
                             else if ((index + 1) === oTable.getBinding("rows").aIndices.length) { sActiveRow = item }
                         }
                     })
-                    
+
                     //clear active row
                     oTable.getModel().getData().rows.forEach(row => row.ACTIVE = "");
 
                     //get next row to focus and active row (arrow up)
-                    if (oEvent.key === "ArrowUp") { 
+                    if (oEvent.key === "ArrowUp") {
                         if (sCurrentRow !== 0) {
                             sActiveRow = oTable.getBinding("rows").aIndices.filter((fItem, fIndex) => fIndex === (sCurrentRow - 1))[0];
                         }
@@ -1424,7 +1571,7 @@ sap.ui.define([
                         sCurrentRow = sCurrentRow === 0 ? sCurrentRow : sCurrentRow - iFirstVisibleRowIndex;
                         sNextRow = sCurrentRow === 0 ? 0 : sCurrentRow - 1;
                     }
-                    else if (oEvent.key === "ArrowDown") { 
+                    else if (oEvent.key === "ArrowDown") {
                         sCurrentRow = sCurrentRow - iFirstVisibleRowIndex;
                         sNextRow = sCurrentRow + 1;
                     }
@@ -1435,8 +1582,8 @@ sap.ui.define([
                     //auto-scroll up/down
                     if (oEvent.key === "ArrowDown" && (sNextRow + 1) < oTable.getModel().getData().rows.length && (sNextRow + 1) > iVisibleRowCount) {
                         oTable.setFirstVisibleRow(iFirstVisibleRowIndex + 1);
-                    }   
-                    else if (oEvent.key === "ArrowUp" && sCurrentRow === 0 && sNextRow === 0 && iFirstVisibleRowIndex !== 0) { 
+                    }
+                    else if (oEvent.key === "ArrowUp" && sCurrentRow === 0 && sNextRow === 0 && iFirstVisibleRowIndex !== 0) {
                         oTable.setFirstVisibleRow(iFirstVisibleRowIndex - 1);
                     }
 
@@ -1446,7 +1593,7 @@ sap.ui.define([
                             if (cell.getBindingInfo("value").parts[0].path === sColumnName) { sColumnIndex = index; }
                         }
                     })
-                    
+
                     if (oEvent.key === "ArrowDown") {
                         sNextRow = sNextRow === iVisibleRowCount ? sNextRow - 1 : sNextRow;
                     }
@@ -1462,11 +1609,11 @@ sap.ui.define([
                 }
             },
 
-            onKeyDown(oEvent) {           
+            onKeyDown(oEvent) {
                 console.log(oEvent);
             },
 
-            onTableResize: function(oEvent) {
+            onTableResize: function (oEvent) {
                 var oSplitter = this.byId("splitterMain");
                 var oHeaderPane = oSplitter.getRootPaneContainer().getPanes().at(0);
                 var oDetailPane = oSplitter.getRootPaneContainer().getPanes().at(1);
@@ -1493,10 +1640,10 @@ sap.ui.define([
                 oDetailPane.setLayoutData(oDetailLayoutData);
             },
 
-            onWrapText: function(oEvent) {
+            onWrapText: function (oEvent) {
                 this._sActiveTable = oEvent.getSource().data("TableId");
                 var vWrap = this.getView().getModel("ui").getData().dataWrap[this._sActiveTable];
-                
+
                 this.byId(this._sActiveTable).getColumns().forEach(col => {
                     var oTemplate = col.getTemplate();
                     oTemplate.setWrapping(!vWrap);
@@ -1513,7 +1660,7 @@ sap.ui.define([
                     return new sap.ui.core.Item({
                         key: aCells[0].getText(),
                         text: aCells[0].getText()
-                    }); 
+                    });
                 }
                 else {
                     return new sap.ui.core.Item({
@@ -1549,7 +1696,7 @@ sap.ui.define([
                         SORTORDER: column.mProperties.sortOrder,
                         SORTSEQ: "1",
                         VISIBLE: column.mProperties.visible,
-                        WIDTH: column.mProperties.width.replace('px',''),
+                        WIDTH: column.mProperties.width.replace('px', ''),
                         WRAPTEXT: this.getView().getModel("ui").getData().dataWrap[this._sActiveTable] === true ? "X" : ""
                     });
 
@@ -1563,52 +1710,52 @@ sap.ui.define([
 
                 oModel.create("/TableLayoutSet", oParam, {
                     method: "POST",
-                    success: function(data, oResponse) {
+                    success: function (data, oResponse) {
                         MessageBox.information(me.getView().getModel("ddtext").getData()["INFO_LAYOUT_SAVE"]);
                     },
-                    error: function(err) {
+                    error: function (err) {
                         MessageBox.error(err);
                     }
-                });                
+                });
             },
 
             //******************************************* */
             // Column Filtering
             //******************************************* */
 
-            onColFilterClear: function(oEvent) {
+            onColFilterClear: function (oEvent) {
                 TableFilter.onColFilterClear(oEvent, this);
             },
 
-            onColFilterCancel: function(oEvent) {
+            onColFilterCancel: function (oEvent) {
                 TableFilter.onColFilterCancel(oEvent, this);
             },
 
-            onColFilterConfirm: function(oEvent) {
+            onColFilterConfirm: function (oEvent) {
                 TableFilter.onColFilterConfirm(oEvent, this);
             },
 
-            onFilterItemPress: function(oEvent) {
+            onFilterItemPress: function (oEvent) {
                 TableFilter.onFilterItemPress(oEvent, this);
             },
 
-            onFilterValuesSelectionChange: function(oEvent) {
+            onFilterValuesSelectionChange: function (oEvent) {
                 TableFilter.onFilterValuesSelectionChange(oEvent, this);
             },
 
-            onSearchFilterValue: function(oEvent) {
+            onSearchFilterValue: function (oEvent) {
                 TableFilter.onSearchFilterValue(oEvent, this);
             },
 
-            onCustomColFilterChange: function(oEvent) {
+            onCustomColFilterChange: function (oEvent) {
                 TableFilter.onCustomColFilterChange(oEvent, this);
             },
 
-            onSetUseColFilter: function(oEvent) {
+            onSetUseColFilter: function (oEvent) {
                 TableFilter.onSetUseColFilter(oEvent, this);
             },
 
-            onRemoveColFilter: function(oEvent) {
+            onRemoveColFilter: function (oEvent) {
                 TableFilter.onRemoveColFilter(oEvent, this);
             },
 
@@ -1617,20 +1764,20 @@ sap.ui.define([
             //******************************************* */
 
             setSmartFilterModel: function () {
-                var oModel = this.getOwnerComponent().getModel("ZVB_3DERP_ASN_FILTERS_CDS");               
+                var oModel = this.getOwnerComponent().getModel("ZVB_3DERP_ASN_FILTERS_CDS");
                 var oSmartFilter = this.getView().byId("smartFilterBar");
                 oSmartFilter.setModel(oModel);
             },
 
-            beforeVariantFetch: function(oEvent) {
+            beforeVariantFetch: function (oEvent) {
                 SmartFilterCustomControl.beforeVariantFetch(this);
             },
 
-            afterVariantLoad: function(oEvent) {
+            afterVariantLoad: function (oEvent) {
                 SmartFilterCustomControl.afterVariantLoad(this);
             },
 
-            clearSmartFilters: function(oEvent) {
+            clearSmartFilters: function (oEvent) {
                 SmartFilterCustomControl.clearSmartFilters(this);
             },
 

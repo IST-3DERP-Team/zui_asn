@@ -1012,22 +1012,23 @@ sap.ui.define([
                                     }
 
                                     aSelIndices.forEach(item => {
+                                        // console.log(item);
                                         var entitySet = vEntitySet;
                                         var iKeyCount = me._aColumns[me._sActiveTable.replace("Tab", "")].filter(col => col.Key === "X").length;
                                         var itemValue;
+                                        var itemDateValue;
+                                        var itemASNValue;
 
                                         me._aColumns[me._sActiveTable.replace("Tab", "")].forEach(col => {
+                                            // console.log(aData.at(item)[col.ColumnName]);
                                             if (col.DataType === "DATETIME") {
-                                                if (col.ColumnName === "ASNNDT")
-                                                    itemValue = sapDateFormat2.format(new Date(aData.at(item)[col.ColumnName]));
-                                                else
                                                     itemValue = sapDateFormat.format(new Date(aData.at(item)[col.ColumnName])) + "T00:00:00";
                                             }
                                             else if (col.DataType === "BOOLEAN") {
                                                 oTmpSelectedIndices[col.ColumnName] = aData.at(item)[col.ColumnName] === true ? "X" : "";
                                             }
                                             else {
-                                                itemValue = aData.at(item)[col.ColumnName];
+                                                    itemValue = aData.at(item)[col.ColumnName];
                                             }
 
                                             if (iKeyCount === 1) {
@@ -1043,8 +1044,17 @@ sap.ui.define([
                                                 if (col.Key === "X") {
                                                     if (col.DataType === "DATETIME") {
                                                         entitySet += col.ColumnName + "=datetime'" + itemValue + "',"
+
+                                                        if(col.ColumnName === "ASNDT") {
+                                                            itemDateValue = itemValue;
+                                                        }
+                                                        
                                                     } else {
                                                         entitySet += col.ColumnName + "='" + itemValue + "',"
+
+                                                        if(col.ColumnName === "ASNNO") {
+                                                            itemASNValue = itemValue;
+                                                        }
                                                     }
                                                 }
                                             }
@@ -1053,18 +1063,23 @@ sap.ui.define([
                                         if (iKeyCount > 1) entitySet = entitySet.substring(0, entitySet.length - 1);
                                         entitySet += ")";
 
-                                        var param = {};
+                                        var oParam;
 
-                                        param["DELETED"] = "X";
+                                        oParam = {
+                                            "SBU": me._sbu,
+                                            "ASNNO": itemASNValue,
+                                            "ASNDT": itemDateValue,
+                                            "DELETED": "X"
+                                        };
 
                                         console.log(entitySet);
-                                        console.log(param);
-                                        me._oModel.update(entitySet, param, mParameters);
+                                        console.log(oParam);
+                                        me._oModel.update(entitySet, oParam, mParameters);
                                         // me._oModel.update("/" + encodeURIComponent(entitySet), param, mParameters);
                                     })
 
-                                    Common.closeProcessingDialog(me);
-                                    return;
+                                    // Common.closeProcessingDialog(me);
+                                    // return;
 
                                     me._oModel.submitChanges({
                                         groupId: "update",
@@ -1074,9 +1089,9 @@ sap.ui.define([
                                             aSelIndices.sort((a, b) => -1);
                                             // console.log(aSelIndices)
 
-                                            aSelIndices.forEach(item => {
-                                                aData.splice(item, 1);
-                                            })
+                                            // aSelIndices.forEach(item => {
+                                            //     aData.splice(item, 1);
+                                            // })
 
                                             // console.log(aData);
 

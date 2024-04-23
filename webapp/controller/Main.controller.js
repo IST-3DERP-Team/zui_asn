@@ -972,8 +972,8 @@ sap.ui.define([
                     var aData = oTable.getModel().getData().rows;
                     var vEntitySet = "";
 
-                    if (this._sActiveTable === "headerTab") vEntitySet = "/ASNHDRSet(";
-                    else vEntitySet = "/ASNDETSet(";
+                    if (this._sActiveTable === "headerTab") vEntitySet = "ASNHDRSet(";
+                    else vEntitySet = "ASNDETSet(";
 
                     this._oModel.setUseBatch(true);
                     this._oModel.setDeferredGroups(["update"]);
@@ -1069,13 +1069,13 @@ sap.ui.define([
                                             "SBU": me._sbu,
                                             "ASNNO": itemASNValue,
                                             "ASNDT": itemDateValue,
-                                            "DELETED": "X"
+                                            "DELETED": true
                                         };
 
                                         console.log(entitySet);
                                         console.log(oParam);
-                                        me._oModel.update(entitySet, oParam, mParameters);
-                                        // me._oModel.update("/" + encodeURIComponent(entitySet), param, mParameters);
+                                        // me._oModel.update(entitySet, oParam, mParameters);
+                                        me._oModel.update("/" + encodeURIComponent(entitySet), oParam, mParameters);
                                     })
 
                                     // Common.closeProcessingDialog(me);
@@ -1112,6 +1112,8 @@ sap.ui.define([
                                 }
                             }
                         })
+
+                        this.onRefresh();
                     }
                     else {
                         MessageBox.information(this.getView().getModel("ddtext").getData()["INFO_NO_SEL_RECORD_TO_PROC"]);
